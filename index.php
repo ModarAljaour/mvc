@@ -5,6 +5,7 @@ require_once __DIR__ . '/app/models/UserModel.php';
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/lib/DB/MysqliDb.php';
 
+
 // Namespace
 use UserModel\UserModel;
 use UserController\UserController;
@@ -21,7 +22,7 @@ $db = new MysqliDb(
     $config['pass'],
     $config['db']
 );
-
+// ..asd
 // ...  Use classes
 $model = new UserModel($db);
 $controller = new UserController($model);
