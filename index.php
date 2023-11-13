@@ -1,14 +1,17 @@
 <?php
-// public/index.php
-require_once __DIR__ . '/app/controllers/UserController.php';
-require_once __DIR__ . '/app/models/UserModel.php';
-require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/lib/DB/MysqliDb.php';
-
+spl_autoload_register(
+    function ($className) {
+        if (file_exists("$className.php")) {
+            require str_replace('\\', '/', $className) . ".php";
+        }
+    }
+);
 
 // Namespace
-use UserModel\UserModel;
-use UserController\UserController;
+// use config\config;
+use app\models\UserModel;
+use app\controllers\UserController;
 
 // ... Path
 $request =  $_SERVER['REQUEST_URI'];
@@ -22,7 +25,7 @@ $db = new MysqliDb(
     $config['pass'],
     $config['db']
 );
-// ..asd
+
 // ...  Use classes
 $model = new UserModel($db);
 $controller = new UserController($model);
