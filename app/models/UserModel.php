@@ -1,6 +1,6 @@
 <?php
 // app/models/UserModel.php
-namespace UserModel;
+namespace app\models;
 
 class UserModel
 {
