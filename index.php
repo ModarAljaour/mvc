@@ -1,4 +1,5 @@
 <?php
+// mvc
 // public/index.php
 require_once __DIR__ . '/app/controllers/UserController.php';
 require_once __DIR__ . '/app/models/UserModel.php';
